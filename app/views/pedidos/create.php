@@ -7,7 +7,14 @@
 			<form class="card-body" action="">
 				<div class="form-group">
 					<label for="">Producto:</label>
-					<input type="text" class="form-control" required>
+					<select name="" id="" class="form-control">
+						<option value="" disabled selected>Seleccione una opcion</option>
+						<option value="">Emperador plus</option>
+						<option value="">Lamina extra</option>
+						<option value="">Modulo D20</option>
+						<option value="">Colchoneta america 100x190</option>
+					</select>
+					<!-- <input type="text" class="form-control" required> -->
 				</div>
 				<div class="form-group">
 					<label for="">Cantidad:</label>

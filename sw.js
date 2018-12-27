@@ -1,21 +1,23 @@
 const CACHE_NAME = "pwa-demo-ed-cache-v1",
 urlsToCache = [
-	'/espumredApp/',
-	'/espumredApp/?utm=homescreen',
-	'/espumredApp/index.php',
-	'/espumredApp/index.php?utm=homescreen',
-	'/espumredApp/favicon.ico',
-	'/espumredApp/assets/css/style.css',
-	'/espumredApp/assets/js/scripts.js',
-	'/espumredApp/assets/js/sw.js',
-	'/espumredApp/assets/img/57x57.png',
-	'/espumredApp/assets/img/72x72.png',
-	'/espumredApp/assets/img/96x96.png',
-	'/espumredApp/assets/img/114x114.png',
-	'/espumredApp/assets/img/144x144.png',
-	'/espumredApp/assets/img/192x192.png',
+	'./',
+	'./sw.js',
+	'./?utm=homescreen',
+	'./index.php',
+	'./favicon.ico',
+	'./assets/css/style.css',
+	'./assets/js/scripts.js',
+	'./assets/img/icon_57x57.png',
+	'./assets/img/icon_72x72.png',
+	'./assets/img/icon_96x96.png',
+	'./assets/img/icon_114x114.png',
+	'./assets/img/icon_144x144.png',
+	'./assets/img/icon_192x192.png',
+	'./assets/img/icon_256x256.png',
+	'./assets/img/icon_384x384.png',
+	'./assets/img/icon_512x512.png',
 	'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
-	'https://use.fontawesome.com/releases/v5.6.3/css/all.css',
+	'https://use.fontawesome.com/releases/v5.6.3/css/all.css'
 ];
 
 self.addEventListener('install',(e)=>{
@@ -86,7 +88,7 @@ self.addEventListener('push',(e)=>{
 	let title = "Demostración de notificación",
 	option = {
 		body:'Click para regresar a la aplicación',
-		icon:'./img/192x192.png',
+		icon:'./assets/img/icon_192x192.png',
 		vabrate:[100,50,100],
 		data:{
 			id:1		
@@ -95,12 +97,12 @@ self.addEventListener('push',(e)=>{
 				{
 					'action':'si',
 					'title':'quiero esta aplicacion :D',
-					icon:'./img/192x192.png'
+					icon:'./assets/img/icon_192x192.png'
 				},
 				{
 					'action':'no',
 					'title':'no quiero esta aplicacion :(',
-					icon:'./img/192x192.png'
+					icon:'./assets/img/icon_192x192.png'
 				}
 				]
 	}

@@ -32,7 +32,7 @@ class Controller
 	}
 
 	public function redirect($path,$parameters = null){
-		$pr;
+		$pr = null;
 		if(!is_null($parameters)&& is_array($parameters)){
 			$pr='/';
 			foreach ($parameters as $parameter) {

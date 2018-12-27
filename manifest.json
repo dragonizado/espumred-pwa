@@ -1,0 +1,61 @@
+{
+	"name":"Espumred",
+	"short_name":"Espumred",
+	"description":"Aplicacion interna de Espumas Medellín.",
+	"background_color":"#F77F2E",
+	"theme_color":"#F77F2E",
+	"orientation":"portrait",
+	"display":"standalone",
+	"start_url":"./?utm=homescreen",
+	"scope":"./",
+	"lang":"es-CO",
+	"icons":[
+		{
+			"src":"./assets/img/icon_57x57.png",
+			"sizes":"57x57",
+			"type":"image/png"
+		},
+		{
+			"src":"./assets/img/icon_72x72.png",
+			"sizes":"72x72",
+			"type":"image/png"
+		},
+		{
+			"src":"./assets/img/icon_96x96.png",
+			"sizes":"96x96",
+			"type":"image/png"
+		},
+		{
+			"src":"./assets/img/icon_114x114.png",
+			"sizes":"114x114",
+			"type":"image/png"
+		},
+		{
+			"src":"./assets/img/icon_144x144.png",
+			"sizes":"144x144",
+			"type":"image/png"
+		},
+		{
+			"src":"./assets/img/icon_192x192.png",
+			"sizes":"192x192",
+			"type":"image/png"
+		},
+		{
+			"src":"./assets/img/icon_256x256.png",
+			"sizes":"256x256",
+			"type":"image/png"
+		},
+		{
+			"src":"./assets/img/icon_384x384.png",
+			"sizes":"384x384",
+			"type":"image/png"
+		},
+		{
+			"src":"/espumredApp/assets/img/icon_512x512.png",
+			"sizes":"512x512",
+			"type":"image/png"
+		}
+
+	]
+
+}

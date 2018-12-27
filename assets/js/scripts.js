@@ -2,9 +2,9 @@
 
 if('serviceWorker' in navigator){
 	w.addEventListener('load',()=>{
-		n.serviceWorker.register('/espumredApp/assets/js/sw.js').then((registration)=>{
+		n.serviceWorker.register('/espumredApp/sw.js').then((registration)=>{
 			c(registration);
-			c('Service Worker se ha registrado correctamente',registration.scope);
+			c('Service Worker se ha registrado correctamente scope:',registration.scope);
 		}).catch(err => {
 			c('registro de service Worker fallido',err)
 		});
