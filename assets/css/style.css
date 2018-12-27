@@ -1,4 +1,196 @@
 body{
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 	margin:0;
 	padding: 0;
+}
+
+body.body-login{
+	overflow-x: hidden;
+}
+
+.bg-primary{
+	background-color: #F77F2E;
+}
+
+.input-field.login-form {
+    border-radius: 4px;
+    background-color: #1c1b1b21;
+	padding-left: 8px;
+	padding-right: 10px;
+}
+
+/* label focus color */
+.input-field.login-form i{
+	color:#713A14;
+}
+
+	.input-field.login-form input[type=text]:focus + label {
+     color: #000;
+   }
+
+   /* label underline focus color */
+   .input-field.login-form input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+   .input-field.login-form input[type=text] {
+     border-bottom: 1px solid #1c1b1b21;
+     box-shadow: 0 1px 0 0 #1c1b1b21;
+   }
+
+   .input-field.login-form input[type=password]:focus + label {
+     color: #000;
+   }
+
+   .input-field.login-form input[type=password]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+   .input-field.login-form input[type=password] {
+     border-bottom: 1px solid #1c1b1b21;
+     box-shadow: 0 1px 0 0 #1c1b1b21;
+   }
+
+/* label color */
+   .input-field.login-form label {
+     color: #482710;
+   }
+
+   /* icon prefix focus color */
+   .input-field.login-form .prefix.active {
+     color: #3a2a18;
+   }
+
+footer.login-footer{
+	bottom: 0px;
+    position: absolute;
+	align-self: center;
+}
+footer.login-footer span{
+	font-size:11px;
+	opacity: 0.6;
+}
+.login-img{
+	padding-top: 42px;
+}
+
+.btn-block{
+	width: 100%;
+}
+
+.form-group {
+    margin-top: 37px;
+}
+
+.btn-primary{
+	background-color: #F77F2E;
+}
+
+.btn-secondary{
+	background-color:#FFAF54; 
+}
+
+nav {
+    background-color: #F77F2E;
+    height: 76px;
+    line-height: 76px;
+}
+
+nav .brand-logo {
+    position: absolute;
+    left: 42% !important;
+    font-size: 1.7rem;
+
+}
+
+nav .sidenav-trigger i {
+    height: 76px;
+    line-height: 76px;
+}
+
+nav .sidenav-trigger {
+    height: 76px;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 76px;
+    line-height: 76px;
+}
+.img-card-logo{
+	background-color:#BDBDBD;
+}
+.d-flex{
+	display: flex;
+}
+
+/* margin top */
+.mt-1{
+	margin-top:1rem;
+}
+.mt-2{
+	margin-top:2rem;
+}
+.mt-3{
+	margin-top:3rem;
+}
+.mt-4{
+	margin-top:4rem;
+}
+.mt-5{
+	margin-top:5rem;
+}
+
+/* margin-left */
+.ml-1{
+	margin-left:1rem;
+}
+.ml-2{
+	margin-left:2rem;
+}
+.ml-3{
+	margin-left:3rem;
+}
+.ml-4{
+	margin-left:4rem;
+}
+.ml-5{
+	margin-left:5rem;
+}
+
+/* margin right */
+.mr-1{
+	margin-right:1rem;
+}
+.mr-2{
+	margin-right:2rem;
+}
+.mr-3{
+	margin-right:3rem;
+}
+.mr-4{
+	margin-right:4rem;
+}
+.mr-5{
+	margin-right:5rem;
+}
+
+/* margin bottom */
+.mb-1{
+	margin-bottom:1rem;
+}
+.mb-2{
+	margin-bottom:2rem;
+}
+.mb-3{
+	margin-bottom:3rem;
+}
+.mb-4{
+	margin-bottom:4rem;
+}
+.mb-5{
+	margin-bottom:5rem;
 }

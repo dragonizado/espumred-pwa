@@ -6,7 +6,7 @@
 	"theme_color":"#F77F2E",
 	"orientation":"portrait",
 	"display":"standalone",
-	"start_url":"./?utm=homescreen",
+	"start_url":"./index.php?url=default/login",
 	"scope":"./",
 	"lang":"es-CO",
 	"icons":[

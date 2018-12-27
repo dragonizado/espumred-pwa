@@ -36,12 +36,12 @@ class App
 						$this->url_controller->index();
 					}else{
 						// echo "Se ha ingresado un controlador y un metodo pero el metodo no existe en ese controlador";
-						header('location:'.URL.'public/?url=error');
+						header('location:'.URL.'?url=error');
 					}
 				}
 			}else{
 				// echo "se ha ingresado un metodo pero no existe ese archivo";
-				header('location:'.URL.'public/?url=error');
+				header('location:'.URL.'?url=error');
 			}
 		}
 	}
