@@ -16,8 +16,11 @@ urlsToCache = [
 	'./assets/img/icon_256x256.png',
 	'./assets/img/icon_384x384.png',
 	'./assets/img/icon_512x512.png',
-	'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css',
-	'https://use.fontawesome.com/releases/v5.6.3/css/all.css'
+	'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
+	'https://fonts.googleapis.com/icon?family=Material+Icons',
+	'https://code.jquery.com/jquery-3.3.1.slim.min.js',
+	'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js',
+	'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'
 ];
 
 self.addEventListener('install',(e)=>{
