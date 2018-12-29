@@ -44,8 +44,10 @@ class Controller
 	}
 
 	public function hasSession(){
-		session_start();
-		if(isset($_SESSION['userName'])){
+		if(!isset($_SESSION)){
+			session_start();
+		}
+		if((isset($_COOKIE['username']) && isset($_COOKIE['token']))||isset($_SESSION['userName'])){
 			return true;
 		}else{
 			return false;
@@ -68,6 +70,11 @@ class Controller
 				return false;
 			}
 		}
+	}
+
+	public function json_send(Array $data){
+		echo json_encode($data);
+		exit();
 	}
 
 	
