@@ -24,19 +24,21 @@
 
 <script>
 
-	if(typeof(Storage) !== "undefined"){
-		if('token' in localStorage && localStorage.getItem('token') != 'undefined'){
-			let token = localStorage.getItem('token'),
-			username = localStorage.getItem('userName');
-var x = document.cookie
-			console.log(x)
-			// redirectToHome()
-			// loginToken(username,token)	
+	// if(typeof(Storage) !== "undefined"){
+	// 	if('token' in localStorage && localStorage.getItem('token') != 'undefined'){
+	// 		let token = localStorage.getItem('token'),
+	// 		username = localStorage.getItem('userName');
 			
-		}
-	}else{
-		console.log("the browser does not support local storage.")
-	}
+	// 		var x = document.cookie
+	// 		console.log(x)
+
+	// 		// redirectToHome()
+	// 		// loginToken(username,token)	
+			
+	// 	}
+	// }else{
+	// 	console.log("the browser does not support local storage.")
+	// }
 
 
 	const login_form = document.querySelector('form');
@@ -49,14 +51,14 @@ var x = document.cookie
 
 		xhttp.onreadystatechange = function(){
 
-			if(this.readyState == 4 && this.status == 0){
-				alert("No se puede realizar la solicitud al servidor porque no hay internet")
-			}
+			// if(this.readyState == 4 && this.status == 0){
+			// 	alert("No se puede realizar la solicitud al servidor porque no hay internet")
+			// }
 
 			if(this.readyState == 4 && this.status == 200){
-				let data = JSON.parse(this.response)
-				localStorage.setItem('token',data.token)
-				localStorage.setItem('userName',data.user)
+				// let data = JSON.parse(this.response)
+				// localStorage.setItem('token',data.token)
+				// localStorage.setItem('userName',data.user)
 				redirectToHome()
 			}
 		};
