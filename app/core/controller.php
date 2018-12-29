@@ -47,7 +47,7 @@ class Controller
 		if(!isset($_SESSION)){
 			session_start();
 		}
-		if((isset($_COOKIE['username']) && isset($_COOKIE['token']))||isset($_SESSION['userName'])){
+		if((isset($_COOKIE['userName']) && isset($_COOKIE['token']))||isset($_SESSION['userName'])){
 			return true;
 		}else{
 			return false;
@@ -57,16 +57,20 @@ class Controller
 	public function isLogged($path=null){
 		if($this->hasSession()){
 			if(is_null($path)){
+				// exit("Esta logueado pero no se redirecciona solo devuelve true");
 				return true;
 			}else{
+				// exit("Esta logueado pero se redirecciona con una ruta personalizada");
 				$this->redirect($path);
 			}
 		}else{
 			if(is_null($path)){
+				// exit("No esta logueado se redirecciona el usuario al login");
 				session_destroy();
 				unset($_SESSION);
-				$this->redirect('default/login');
+				// $this->redirect('default/login');
 			}else{
+				// exit("No esta logueado se devuelve falso");
 				return false;
 			}
 		}

@@ -18,5 +18,25 @@
 			// let instancesOfDropdowns = M.Dropdown.init(elemsDropdowns);
 	});
 	</script>
+	<script>
+		function logout(){
+			let xhttp = new XMLHttpRequest();
+			let data = new FormData();
+			data.append('btn_logout',true)
+			data.append('ajax',true)
+			xhttp.open('post','./?url=default/logout',true)
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					// dToken()
+					redirectToHome()
+				}
+			}
+			xhttp.send(data)
+		}
+
+		function redirectToHome(){
+			location.href = './?url=default/login'
+		}
+</script>
 </body>
 </html>

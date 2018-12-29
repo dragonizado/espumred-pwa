@@ -4,9 +4,7 @@
 		<a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 		<ul class="right">
 			<li><a href="#" class="dropdown-trigger" data-target="menu-dropdown"><i class="material-icons right">more_vert</i></a></li>
-			
 		</ul>
-		
 	</div>
 </nav>
 
@@ -15,7 +13,7 @@
 </ul>
 
 <ul class="sidenav" id="mobile-menu">
-	<li><a href="<?=$this->createUrl('/');?>">Inicio</a></li>
+	<li class="active"><a href="<?=$this->createUrl('/');?>">Inicio</a></li>
 	<li><a href="<?=$this->createUrl('pedidos/create');?>">Pedido</a></li>
 	<li><a href="#" onclick="logout();">Salir</a></li>
 	<!-- <form method="post" action="<?#$this->createUrl('default/logout');?>" class="">
@@ -45,27 +43,5 @@
 
 </div>
 
-<script>
-function logout(){
-	let xhttp = new XMLHttpRequest();
-	let data = new FormData();
-	data.append('btn_logout',true)
-	data.append('ajax',true)
-	xhttp.open('post','./?url=default/logout',true)
-	xhttp.onreadystatechange = function(){
-		if(this.readyState == 4 && this.state == 200){
-			dToken()
-			location.href = './?url=default/login'
-		}
-	}
-	xhttp.send(data)
-}
 
-function dToken(){
-	if(localStorage.getItem('token')){
-		localStorage.removeItem('token')
-		localStorage.removeItem('userName')
-	}
-}
-</script>
 

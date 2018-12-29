@@ -11,10 +11,11 @@ class defaultController extends Controller
 	}
 
 	public function login(){
+		$this->isLogged('default/index');
+		$this->view('default/login',null,'login');	
+	}
 
-		// var_dump($_POST['ajax']);
-
-		// exit();
+	public function logincheck(){
 		if(isset($_POST['btn_login'])){
 			$user = strtolower($_POST['username']);
 			$pass = $_POST['password'];
@@ -24,16 +25,17 @@ class defaultController extends Controller
 				if(!isset($_POST['ajax'])){
 					$this->redirect('default/');
 				}else{
-					$this->json_send(["token"=>$_SESSION['token'],"user"=>$user]);
+					$this->json_send(["correctLogin"=>true,"msn"=>"OK","token"=>$_SESSION['token'],"user"=>$user]);
 				}
 			}else{
-				echo "Error en el login";
+				if(!isset($_POST['ajax'])){
+					echo "Error en el login";
+				}else{
+					$this->json_send(["correctLogin"=>false,"msn"=>"Los datos no corresponden con nuestros registros","token"=>null,"user"=>$user]);
+				}
 			}
 		}
-		$this->isLogged('default/index');
-		$this->view('default/login',null,'login');	
 	}
-
 	// public function loginToken(){
 	// 	if(isset($_POST['ajax']) && isset($_POST['token'])){
 	// 		if($this->hasSession()){
@@ -80,8 +82,13 @@ class defaultController extends Controller
 	public function logout(){
 		if(isset($_POST['btn_logout'])){
 			session_start();
+			$_SESSION = [];
+			setcookie('userName', '', time() - 42000);
+			setcookie('token', '', time() - 42000);
+
 			session_destroy();
-			unset($_SESSION);
+
+			exit();
 			if(!isset($_POST['ajax'])){
 				$this->redirect('default/login');
 			}else{

@@ -90,6 +90,14 @@ footer.login-footer span{
 	background-color: #F77F2E;
 }
 
+.btn{
+	background-color: #FFAF54 !important;
+}
+
+.btn:hover{
+	background-color: #FFAF54 !important;
+}
+
 .btn-secondary{
 	background-color:#FFAF54; 
 }
@@ -120,11 +128,46 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
     height: 76px;
     line-height: 76px;
 }
+
+.preloader-container{
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 100;
+  width: 100vh;
+  height: 100vh;
+  background: #ff8d00;
+  justify-content: center;
+  align-content: center;
+}
+
+.hidden{
+  display: none;
+}
+
+.container-title{
+    margin-top: 24px;
+    display: block;
+    line-height: 32px;
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
 .img-card-logo{
 	background-color:#BDBDBD;
 }
 .d-flex{
 	display: flex;
+}
+
+.vh-100{
+  height: 100vh;
+}
+
+.vh-p-100{
+  height: 100%;
 }
 
 /* margin top */

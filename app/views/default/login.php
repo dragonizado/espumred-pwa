@@ -24,22 +24,9 @@
 
 <script>
 
-	// if(typeof(Storage) !== "undefined"){
-	// 	if('token' in localStorage && localStorage.getItem('token') != 'undefined'){
-	// 		let token = localStorage.getItem('token'),
-	// 		username = localStorage.getItem('userName');
-			
-	// 		var x = document.cookie
-	// 		console.log(x)
-
-	// 		// redirectToHome()
-	// 		// loginToken(username,token)	
-			
-	// 	}
-	// }else{
-	// 	console.log("the browser does not support local storage.")
-	// }
-
+	if(comprobarCookie('userName') && comprobarCookie('token')){
+		redirectToHome();
+	}
 
 	const login_form = document.querySelector('form');
 	login_form.addEventListener('submit',(e)=>{
@@ -56,14 +43,17 @@
 			// }
 
 			if(this.readyState == 4 && this.status == 200){
-				// let data = JSON.parse(this.response)
-				// localStorage.setItem('token',data.token)
-				// localStorage.setItem('userName',data.user)
-				redirectToHome()
+				let data = JSON.parse(this.response)
+				if(data.correctLogin == true){
+					redirectToHome()
+				}else{
+					 M.toast({html: data.msn})
+				}
+
 			}
 		};
 
-		xhttp.open('post','./?url=default/login',true)
+		xhttp.open('post','./?url=default/logincheck',true)
 		xhttp.send(data)
 	});
 
@@ -73,26 +63,25 @@
 
 	}
 
-	// function loginToken(user,token){
-	// 	let xhttp = new XMLHttpRequest()
-	// 	let data = new FormData()
-	// 	data.append('ajax',true)
-	// 	data.append('token',token)
-	// 	data.append('username',user)
+	function obtenerCookie(clave) {
+		var name = clave + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1);
+			if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+		}
+		return "";
+	}
 
-	// 	xhttp.open('post','./?url=default/loginToken',true);
-	// 	xhttp.onreadystatechange = function(){
-	// 		if(this.readyState == 4 && this.status == 0){
-	// 			redirectToHome()
-	// 		}
-	// 		if(this.readyState == 4 && this.status == 200){
-	// 			let data = JSON.parse(this.response)
-	// 			if(data.islogin == true){
-	// 				// redirectToHome()
-	// 			} 
-	// 		}
-	// 	}
-	// 	xhttp.send(data)
-	// }
+	function comprobarCookie(clave) {
+		var clave = obtenerCookie(clave);
+		if (clave!="") {
+			return true
+		}else{
+			return false
+		}
+	}
+
 </script>
 
